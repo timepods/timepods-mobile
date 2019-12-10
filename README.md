@@ -1,4 +1,4 @@
-# timepods-mobile
+# timepods-mobile - Ionic 4 Angular 8
 
 1 - Install the Ionic CLI
 
