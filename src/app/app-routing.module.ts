@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'timepod-creation',
+    loadChildren: () => import('./timepod-creation/timepod-creation.module').then( m => m.TimepodCreationPageModule)
   }
 ];
 @NgModule({

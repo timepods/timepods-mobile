@@ -1,9 +1,26 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Your Timepods
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+
+  <ion-card color="dark">
+    <ion-card-content>
+      <!-- Add card content here! -->
+      <ion-text color="light">
+          <h2>You don't have any TimePod yet, let's create one!</h2>
+      </ion-text>
+    </ion-card-content>  
+  </ion-card>
+      
+  <!-- Only icon (no text) -->
+  <ion-button color="dark" expand="block" shape="round" fill="outline" routerLink="/timepod-creation">
+    Create your first Timepod
+    <ion-icon name="add" slot="end"></ion-icon>
+       
+  </ion-button>
+</ion-content>

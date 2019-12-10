@@ -1,0 +1,33 @@
+<ion-header translucent>
+  <ion-toolbar>
+    <ion-title>Timepod Creation - The What</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content fullscreen>
+  <form #form="ngForm" (ngSubmit)="register(form)">
+      <ion-list lines="full" class="ion-no-margin ion-no-padding">
+          <ion-item>
+            <ion-label position="stacked">TimePod Name <ion-text color="danger">*</ion-text></ion-label>
+            <ion-input 
+            required 
+            type="text" 
+            maxLength="32" 
+            placeholder = "TimepodCreation what. . ."
+            ngmodel
+            >            
+          </ion-input>
+          </ion-item>
+          <ion-item>
+              <ion-label position="stacked">Notes </ion-label>
+              <ion-textarea rows="6"  placeholder="This is what you want to share ..."></ion-textarea>
+            </ion-item>
+      </ion-list>
+
+      <div class="ion-padding">
+          <ion-button expand="block" type="submit" class="ion-no-margin">Next</ion-button>
+      </div>
+  </form>
+</ion-content>
+
