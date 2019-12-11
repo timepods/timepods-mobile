@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-timepod-creation',
@@ -7,14 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimepodCreationPage implements OnInit {
 
-  constructor() { }
+  validations_form: FormGroup;
+
+  constructor(public formBuilder: FormBuilder) { 
+
+    
+   }
 
   ngOnInit() {
+    this.validations_form = new FormGroup({
+      timepodName: new FormControl(),
+      timepodNotes: new FormControl()
+    });
   }
 
-  register(form) {
+  onSubmit(values) {
     console.log("form content is");
-    console.log(form);
-    console.log(form.value);
+    console.log(values);
     };
 }

@@ -6,22 +6,27 @@
 
 
 <ion-content fullscreen>
-  <form #form="ngForm" (ngSubmit)="register(form)">
+  <form [formGroup]="validations_form" (ngSubmit)="onSubmit(validations_form.value)" >
       <ion-list lines="full" class="ion-no-margin ion-no-padding">
           <ion-item>
             <ion-label position="stacked">TimePod Name <ion-text color="danger">*</ion-text></ion-label>
-            <ion-input 
-            required 
+            <ion-input   
             type="text" 
-            maxLength="32" 
-            placeholder = "TimepodCreation what. . ."
-            ngmodel
+            formControlName = "timepodName"
+            placeholder = "Timepod Creation"
+            required
             >            
           </ion-input>
           </ion-item>
+          
           <ion-item>
               <ion-label position="stacked">Notes </ion-label>
-              <ion-textarea rows="6"  placeholder="This is what you want to share ..."></ion-textarea>
+              <ion-textarea 
+              rows="6"  
+              placeholder="This is what you want to share ..."
+              formControlName = "timepodNotes"
+              >
+            </ion-textarea>
             </ion-item>
       </ion-list>
 
