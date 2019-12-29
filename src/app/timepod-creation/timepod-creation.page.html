@@ -12,19 +12,24 @@
             <ion-label position="stacked">TimePod Name <ion-text color="danger">*</ion-text></ion-label>
             <ion-input   
             type="text" 
-            formControlName = "timepodName"
+            formControlName="timepodName"
             placeholder = "Timepod Creation"
             required
             >            
           </ion-input>
           </ion-item>
-          
+          <div class="validation-errors">
+            <ng-container *ngFor="let validation of validation_messages.timepodName">
+              <div class="error-message" *ngIf="validations_form.get('timepodName').hasError(validation.type) && (validations_form.get('timepodName').dirty || validations_form.get('timepodName').touched)">
+                <ion-icon name="information-circle-outline"></ion-icon> {{ validation.message }}
+              </div>
+            </ng-container>
+          </div>
           <ion-item>
               <ion-label position="stacked">Notes </ion-label>
               <ion-textarea 
               rows="6"  
               placeholder="This is what you want to share ..."
-              formControlName = "timepodNotes"
               >
             </ion-textarea>
             </ion-item>
