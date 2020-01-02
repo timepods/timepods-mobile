@@ -1,0 +1,8 @@
+{
+  "appId": "app.timepods.io",
+  "appName": "timepods",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

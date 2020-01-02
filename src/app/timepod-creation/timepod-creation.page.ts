@@ -3,17 +3,21 @@ import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms'
 
 import { UsernameValidator } from '../validators/username.validator';
 
+import { Plugins, CameraResultType, CameraSource } from '@capacitor/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
+
 @Component({
   selector: 'app-timepod-creation',
   templateUrl: './timepod-creation.page.html',
   styleUrls: ['./timepod-creation.page.scss'],
 })
 export class TimepodCreationPage implements OnInit {
-
+  photo: SafeResourceUrl;
   validations_form: FormGroup;
 
   constructor(
-    public formBuilder: FormBuilder)
+    public formBuilder: FormBuilder,
+    private sanitizer: DomSanitizer)
     { }
 
   ngOnInit() {
@@ -32,6 +36,17 @@ export class TimepodCreationPage implements OnInit {
         Validators.required
       ]))
     });
+  }
+  
+  async takePicture() {
+    const image = await Plugins.Camera.getPhoto({
+      quality: 100,
+      allowEditing: false,
+      resultType: CameraResultType.DataUrl,
+      source: CameraSource.Camera
+    });
+
+    this.photo = this.sanitizer.bypassSecurityTrustResourceUrl(image && (image.dataUrl));
   }
 
   validation_messages = {

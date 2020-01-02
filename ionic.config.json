@@ -1,5 +1,7 @@
 {
   "name": "timepods",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
